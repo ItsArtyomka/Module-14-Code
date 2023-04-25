@@ -32,8 +32,10 @@ public class Bank {
         @Override
         public void run() {
             while(true) {
-                take(1000);
-                repay(1000);
+                if (getMoney() >= 1000) {
+                    take(1000);
+                    repay(1000);
+                }
             }
         }
     }
